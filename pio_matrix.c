@@ -26,7 +26,14 @@ double desenho2[25] =  {1.0, 0.0, 0.0, 0.0, 1.0,
                         0.0, 0.0, 1.0, 0.0, 0.0,
                         0.0, 1.0, 0.0, 1.0, 0.0,
                         1.0, 0.0, 0.0, 0.0, 1.0};
-
+double animacao1[6][25] = {
+    {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+    {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.1, 0.1, 0.1},
+    {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1},
+    {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1},
+    {0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1},
+    {0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1}
+};
 //função principal
 int main()
 {
@@ -87,9 +94,14 @@ int main()
 	          reset_usb_boot(0,0); //habilita o modo de gravação do microcontrolador
             }
             else if(key == '1'){
-              printf("Número 8 roxo \n");//Provisório depois remover
-              desenho_pio(desenho1, valor_led, pio, sm, 1, 0, 1);////Os três últimos termos são RGB:(1,0,1)=Roxo
-            }
+              printf("Animação 1 rodando");
+	      int j = 0;
+	      for (j=0;j<6;j++)
+	      {
+		      desenho_pio(animacao1[j], valor_led, pio, sm, 1, 0, 1);////Os três últimos termos são RGB:(1,0,1)=Roxo
+		      sleep_ms(500);
+	      }
+	    }
             else if(key == '2'){
               printf("X vermelho\n");//Provisório depois remover
               desenho_pio(desenho2, valor_led, pio, sm, 1, 0, 0);////Os três últimos termos são RGB:(1,0,0)=Vermelho
