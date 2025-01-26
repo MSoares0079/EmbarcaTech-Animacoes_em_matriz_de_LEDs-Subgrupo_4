@@ -3,7 +3,7 @@ void chuva_animacao(PIO pio, uint sm) {
     uint32_t valor_led;
     double chuva[25] = {0.0};
 
-    for (int iteracao = 0; iteracao < 20; iteracao++) { // Repetir a animação 20 vezes
+    for (int iteracao = 0; iteracao < 10; iteracao++) { // Repetir a animação 10 vezes
         // Limpa a matriz
         for (int i = 0; i < 25; i++) {
             chuva[i] = 0.0;
