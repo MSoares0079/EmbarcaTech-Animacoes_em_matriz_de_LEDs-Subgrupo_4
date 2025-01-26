@@ -66,4 +66,3 @@ target_link_libraries(pio_matrix
         )
 
 pico_add_extra_outputs(pio_matrix)
-
