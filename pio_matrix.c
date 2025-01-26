@@ -113,7 +113,7 @@ int main()
               sleep_ms(500);
               desenho_pio(emoji6, valor_led, pio, sm, 0, 0, 1);
               sleep_ms(500);
-              desenho_pio(emoji7, valor_led, pio, sm, 0, 0, 1);////Os três últimos termos são RGB:(1,0,0)=Vermelho
+              desenho_pio(emoji7, valor_led, pio, sm, 0, 0, 1);////Os três últimos termos são RGB:(0,0,1)= Azul
             }
             else{
               printf("Não foi programado uma ação para esta tecla\n");
