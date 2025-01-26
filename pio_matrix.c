@@ -115,12 +115,7 @@ int main()
               sleep_ms(500);
               desenho_pio(emoji6, valor_led, pio, sm, 0, 0, 1);
               sleep_ms(500);
-              desenho_pio(emoji7, valor_led, pio, sm, 0, 0, 1);////Os três últimos termos são RGB:(0,0,1)= Azul
-            } else if (key == '5'){
-              coracao_animacao(pio, sm);
-
-            } else if (key == '6'){
-              chuva_animacao(pio, sm);
+              desenho_pio(emoji7, valor_led, pio, sm, 0, 0, 1);////Os três últimos termos são RGB:(0,0,1)= Azul            
             }
             else if(key == '3'){
               printf("Estrela\n");
@@ -151,6 +146,14 @@ int main()
                   }
               }
             }
+	    else if (key == '4'){
+		printf("Coração\n");//Desenha um coração vermelho
+                coracao_animacao(pio, sm);
+            }
+	    else if (key == '5'){
+	      printf("Chuva\n");//Desenha chuva azul
+              chuva_animacao(pio, sm);
+	    }
             else{
               printf("Não foi programado uma ação para esta tecla\n");
             }
