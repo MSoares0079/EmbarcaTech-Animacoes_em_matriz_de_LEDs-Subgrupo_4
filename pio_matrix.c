@@ -16,6 +16,7 @@
 #include "desenhos/chuva.c"
 #include "desenhos/pulo.c"
 #include "desenhos/animacao_circulo.c"
+#include "desenhos/formas_geometricas.c"
 
 
 
@@ -181,7 +182,19 @@ int main()
                 }
                 sleep_ms(500);
             }
-            } else {
+            } else if (key == '8') {
+		    printf("Formas Geometricas\n");
+
+		    desenho_pio(formar_x, valor_led, pio, sm, 0, 0, 1);
+		    sleep_ms(500);
+		    desenho_pio(formar_circulo, valor_led, pio, sm, 0, 0, 1);
+		    sleep_ms(500);
+		    desenho_pio(formar_triangulo, valor_led, pio, sm, 0, 0, 1);
+		    sleep_ms(500);
+		    desenho_pio(formar_quadrado, valor_led, pio, sm, 0, 0, 1);
+		    sleep_ms(500);
+	    } 
+	    else {
               printf("Não foi programado uma ação para esta tecla\n");
             }
             }
