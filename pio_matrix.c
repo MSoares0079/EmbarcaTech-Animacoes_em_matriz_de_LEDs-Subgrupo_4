@@ -9,6 +9,7 @@
 #include "pio_matrix.pio.h"
 #include "desenhos/desenhosABCD.c"
 #include "desenhos/carinhas.c"
+#include "desenhos/estrela.c"
 #include "funcoes/mudar_LED.c"
 #include "funcoes/scan_keypad.c"
 
@@ -90,14 +91,13 @@ int main()
 	          reset_usb_boot(0,0); //habilita o modo de gravação do microcontrolador
             }
             else if(key == '1'){
-              printf("Animação 1 rodando");
-	      int j = 0;
-	      for (j=0;j<6;j++)
-	      {
-		      desenho_pio(animacao1[j], valor_led, pio, sm, 1, 0, 1);////Os três últimos termos são RGB:(1,0,1)=Roxo
-		      sleep_ms(500);
-	      }
-	    }
+              printf("Animação 1 rodando\n");
+              for (int j=0;j<6;j++)
+              {
+                desenho_pio(animacao1[j], valor_led, pio, sm, 1, 0, 1);////Os três últimos termos são RGB:(1,0,1)=Roxo
+                sleep_ms(500);
+              }
+            }
             else if(key == '2'){
               printf("Emojis\n");
               
@@ -114,6 +114,35 @@ int main()
               desenho_pio(emoji6, valor_led, pio, sm, 0, 0, 1);
               sleep_ms(500);
               desenho_pio(emoji7, valor_led, pio, sm, 0, 0, 1);////Os três últimos termos são RGB:(0,0,1)= Azul
+            }
+            else if(key == '3'){
+              printf("Estrela\n");
+              int cores[3][3] = {
+                {1, 0, 0}, // Vermelho
+                {0, 1, 0}, // Verde
+                {0, 0, 1}  // Azul
+               };
+              for (int j = 0; j < 3; j++) {
+                  // Estrela surge trocando de cores na ordem descrita pela variavel cores
+                  for (int c = 0; c < 3; c++) {
+                      desenho_pio(estrela[j], valor_led, pio, sm, cores[c][0], cores[c][1], cores[c][2]);
+                      sleep_ms(300);
+                  }
+              }
+              for (int j = 2; j >= 0; j--) {
+                  // Estrela diminui trocando de cores na ordem descrita pela variavel cores
+                  for (int c = 0; c < 3; c++) {
+                      desenho_pio(estrela[j], valor_led, pio, sm, cores[c][0], cores[c][1], cores[c][2]);
+                      sleep_ms(300);
+                  }
+              }
+              for (int j = 0; j < 3; j++) {
+                  // Estrela surge novamente trocando de cores na ordem descrita pela variavel cores
+                  for (int c = 0; c < 3; c++) {
+                      desenho_pio(estrela[j], valor_led, pio, sm, cores[c][0], cores[c][1], cores[c][2]);
+                      sleep_ms(300);
+                  }
+              }
             }
             else{
               printf("Não foi programado uma ação para esta tecla\n");
