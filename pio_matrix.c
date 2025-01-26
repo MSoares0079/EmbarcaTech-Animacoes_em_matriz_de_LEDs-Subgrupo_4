@@ -157,6 +157,7 @@ int main()
               printf("Chuva\n");//Desenha chuva azul
               chuva_animacao(pio, sm);
             } else if (key == '6') {
+              printf("Animacao de movimentacao\n");
               for (int16_t i = 0; i < 5; i++) {
                 for (int16_t j = 0; j < NUM_PIXELS; j++) {
                     if (j < 5) {
@@ -170,6 +171,7 @@ int main()
                   sleep_ms(500);
                 }
             } else if (key == '7') {
+              printf("Circulo animado\n");
               for (int16_t i = 0; i < 5; i++) {
                 for (int16_t j = 0; j < NUM_PIXELS; j++) {
                     if (i > 1) {
