@@ -1,7 +1,3 @@
-#include <stdlib.h>
-#include "hardware/pio.h"
- 
-
 // Função para criar a animação de chuva
 void chuva_animacao(PIO pio, uint sm) {
     uint32_t valor_led;
