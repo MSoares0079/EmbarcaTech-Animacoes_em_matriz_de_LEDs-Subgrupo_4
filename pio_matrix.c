@@ -146,19 +146,18 @@ int main()
                   }
               }
             }
-	    else if (key == '4'){
-		printf("Coração\n");//Desenha um coração vermelho
-                coracao_animacao(pio, sm);
+	          else if (key == '4'){
+              printf("Coração\n");//Desenha um coração vermelho
+              coracao_animacao(pio, sm);
             }
-	    else if (key == '5'){
-	      printf("Chuva\n");//Desenha chuva azul
+            else if (key == '5'){
+              printf("Chuva\n");//Desenha chuva azul
               chuva_animacao(pio, sm);
-	    }
+            }
             else{
               printf("Não foi programado uma ação para esta tecla\n");
             }
             }
-
         sleep_ms(100);
         }
     
