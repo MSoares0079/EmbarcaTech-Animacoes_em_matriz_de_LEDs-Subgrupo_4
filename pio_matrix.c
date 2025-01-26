@@ -8,6 +8,7 @@
 #include "pico/bootrom.h"
 #include "pio_matrix.pio.h"
 #include "desenhos/desenhosABCD.c"
+#include "desenhos/carinhas.c"
 #include "funcoes/mudar_LED.c"
 #include "funcoes/scan_keypad.c"
 
@@ -21,11 +22,6 @@ double desenho1[25] =   {0.0, 0.3, 0.3, 0.3, 0.0,
                         0.0, 0.3, 0.3, 0.3, 0.0};
 
 //vetor para criar imagem na matriz de led - 2
-double desenho2[25] =  {1.0, 0.0, 0.0, 0.0, 1.0,
-                        0.0, 1.0, 0.0, 1.0, 0.0, 
-                        0.0, 0.0, 1.0, 0.0, 0.0,
-                        0.0, 1.0, 0.0, 1.0, 0.0,
-                        1.0, 0.0, 0.0, 0.0, 1.0};
 double animacao1[6][25] = {
     {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
     {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.1, 0.1, 0.1},
@@ -103,8 +99,21 @@ int main()
 	      }
 	    }
             else if(key == '2'){
-              printf("X vermelho\n");//Provisório depois remover
-              desenho_pio(desenho2, valor_led, pio, sm, 1, 0, 0);////Os três últimos termos são RGB:(1,0,0)=Vermelho
+              printf("Emojis\n");
+              
+              desenho_pio(emoji1, valor_led, pio, sm, 0, 0, 1);
+              sleep_ms(500);
+              desenho_pio(emoji2, valor_led, pio, sm, 0, 0, 1);
+              sleep_ms(500);
+              desenho_pio(emoji3, valor_led, pio, sm, 0, 0, 1);
+              sleep_ms(500);
+              desenho_pio(emoji4, valor_led, pio, sm, 0, 0, 1);
+              sleep_ms(500);
+              desenho_pio(emoji5, valor_led, pio, sm, 0, 0, 1);
+              sleep_ms(500);
+              desenho_pio(emoji6, valor_led, pio, sm, 0, 0, 1);
+              sleep_ms(500);
+              desenho_pio(emoji7, valor_led, pio, sm, 0, 0, 1);////Os três últimos termos são RGB:(0,0,1)= Azul
             }
             else{
               printf("Não foi programado uma ação para esta tecla\n");
