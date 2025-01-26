@@ -14,6 +14,8 @@
 #include "funcoes/scan_keypad.c"
 #include "desenhos/coracao.c"
 #include "desenhos/chuva.c"
+#include "desenhos/pulo.c"
+#include "desenhos/animacao_circulo.c"
 
 
 
@@ -153,8 +155,33 @@ int main()
             else if (key == '5'){
               printf("Chuva\n");//Desenha chuva azul
               chuva_animacao(pio, sm);
+            } else if (key == '6') {
+              for (int16_t i = 0; i < 5; i++) {
+                for (int16_t j = 0; j < NUM_PIXELS; j++) {
+                    if (j < 5) {
+                        valor_led = matrix_rgb(b = 0.0, animacao_1[4 - i][24 - j], g = 0.0);
+                        pio_sm_put_blocking(pio, sm, valor_led);
+                    } else {
+                        valor_led = matrix_rgb(animacao_1[4 - i][24 - j], r = 0.0, g = 0.0);
+                        pio_sm_put_blocking(pio, sm, valor_led);
+                    }
+                }
+                  sleep_ms(500);
+                }
+            } else if (key == '7') {
+              for (int16_t i = 0; i < 5; i++) {
+                for (int16_t j = 0; j < NUM_PIXELS; j++) {
+                    if (i > 1) {
+                        valor_led = matrix_rgb(b = 0.0, animacao_2[i][24 - j], g = 0.0);
+                        pio_sm_put_blocking(pio, sm, valor_led);
+                    } else {
+                        valor_led = matrix_rgb(animacao_2[i][24 - j], r = 0.0, g = 0.0);
+                        pio_sm_put_blocking(pio, sm, valor_led);
+                    }
+                }
+                sleep_ms(500);
             }
-            else{
+            } else {
               printf("Não foi programado uma ação para esta tecla\n");
             }
             }
