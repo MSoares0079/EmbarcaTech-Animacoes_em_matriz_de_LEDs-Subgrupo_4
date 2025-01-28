@@ -28,7 +28,7 @@ double desenho1[25] =   {0.0, 0.3, 0.3, 0.3, 0.0,
                         0.0, 0.3, 0.3, 0.3, 0.0};
 
 //vetor para criar imagem na matriz de led - 2
-double animacao1[6][25] = {
+double animacaoEnchendo[6][25] = {
     {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
     {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.1, 0.1, 0.1},
     {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1},
@@ -96,10 +96,10 @@ int main()
 	          reset_usb_boot(0,0); //habilita o modo de gravação do microcontrolador
             }
             else if(key == '1'){
-              printf("Animação 1 rodando\n");
+              printf("Enchendo\n");
               for (int j=0;j<6;j++)
               {
-                desenho_pio(animacao1[j], valor_led, pio, sm, 1, 0, 1);////Os três últimos termos são RGB:(1,0,1)=Roxo
+                desenho_pio(animacaoEnchendo[j], valor_led, pio, sm, 1, 0, 1);////Os três últimos termos são RGB:(1,0,1)=Roxo
                 sleep_ms(500);
               }
             }
@@ -200,7 +200,7 @@ int main()
               printf("Não foi programado uma ação para esta tecla\n");
             }
             }
-        sleep_ms(100);
+w        sleep_ms(100);
         }
     
 }
