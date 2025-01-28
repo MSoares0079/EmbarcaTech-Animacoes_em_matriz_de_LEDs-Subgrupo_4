@@ -18,15 +18,6 @@
 #include "desenhos/animacao_circulo.c"
 #include "desenhos/formas_geometricas.c"
 
-
-
-//vetor para criar imagem na matriz de led - 1
-double desenho1[25] =   {0.0, 0.3, 0.3, 0.3, 0.0,
-                        0.0, 0.3, 0.0, 0.3, 0.0, 
-                        0.0, 0.3, 0.3, 0.3, 0.0,
-                        0.0, 0.3, 0.0, 0.3, 0.0,
-                        0.0, 0.3, 0.3, 0.3, 0.0};
-
 //vetor para criar imagem na matriz de led - 2
 double animacaoEnchendo[6][25] = {
     {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
@@ -76,19 +67,19 @@ int main()
                desenho_pio(desenhoA, valor_led, pio, sm, 0, 0, 0);//Os três últimos argumentos são RGB -(0,0,0)=Desligado
             }
             else if(key == 'B'){
-              printf("LEDs azuis 100%% de intencidade\n");
+              printf("LEDs azuis com 100%% de intencidade\n");
               desenho_pio(desenhoB, valor_led, pio, sm, 0, 0, 1);////Os três últimos termos são RGB -(0,0,1)=Azul
             }
             else if(key == 'C'){
-              printf("LEDs vermelhos 80%% de intencidade\n");
+              printf("LEDs vermelhos com 80%% de intencidade\n");
               desenho_pio(desenhoC, valor_led, pio, sm, 1, 0, 0);////Os três últimos termos são RGB -(1,0,0)=Vermelho
             }
             else if(key == 'D'){
-              printf("LEDs verde 50%% de intencidade\n");
+              printf("LEDs verdes com 50%% de intencidade\n");
               desenho_pio(desenhoD, valor_led, pio, sm, 0, 1, 0);////Os três últimos termos são RGB:(1,0,0)=Verde
             }
             else if(key == '#'){
-              printf("LEDs branco 20%% de intencidade\n");
+              printf("LEDs brancos com 20%% de intencidade\n");
               desenho_pio(desenho_jgvelha, valor_led, pio, sm, 1, 1, 1);////Os três últimos termos são RGB:(1,1,1)=Branco
             }
             else if(key == '*'){
@@ -157,7 +148,7 @@ int main()
               printf("Chuva\n");//Desenha chuva azul
               chuva_animacao(pio, sm);
             } else if (key == '6') {
-              printf("Animacao de movimentacao\n");
+              printf("Animação de movimentação\n");
               for (int16_t i = 0; i < 5; i++) {
                 for (int16_t j = 0; j < NUM_PIXELS; j++) {
                     if (j < 5) {
@@ -171,7 +162,7 @@ int main()
                   sleep_ms(500);
                 }
             } else if (key == '7') {
-              printf("Circulo animado\n");
+              printf("Círculo animado\n");
               for (int16_t i = 0; i < 5; i++) {
                 for (int16_t j = 0; j < NUM_PIXELS; j++) {
                     if (i > 1) {
@@ -200,7 +191,7 @@ int main()
               printf("Não foi programado uma ação para esta tecla\n");
             }
             }
-w        sleep_ms(100);
+        sleep_ms(100);
         }
     
 }
