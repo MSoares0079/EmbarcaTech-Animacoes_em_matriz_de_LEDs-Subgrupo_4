@@ -19,7 +19,7 @@ acionamento da matriz de LEDs, em que foram definidas algumas animações a dete
 
 # Funcionamento
     Foram atribuidas as seguintes funcionalidades para as teclas:
-    1- Animação 1
+    1- Enchendo
     2- Emoji
     3- Estrela
     4- Coração
@@ -34,4 +34,5 @@ acionamento da matriz de LEDs, em que foram definidas algumas animações a dete
     #- Liga os LEDs brancos com 20% de intensidade
     *- Ativa o modo de gravação
 # Video demonstrando o funcionamento do código
+https://drive.google.com/file/d/1LDBZ3KITXQmIsosHGkvlviRPdzxLnJT2/view?usp=sharing
 
